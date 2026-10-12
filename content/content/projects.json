@@ -1,0 +1,60 @@
+{
+  "projects": [
+    {
+      "title": "Singapenne",
+      "description": "A contest short film by OTE Visuals.",
+      "image": "",
+      "video_url": "Videos/singapenne.mp4",
+      "tag": "Film",
+      "featured": true
+    },
+    {
+      "title": "Behind Singapenne",
+      "description": "Behind-the-scenes moments and promotional content.",
+      "image": "",
+      "video_url": "Videos/singapenne-bts.mp4",
+      "tag": "BTS",
+      "featured": false
+    },
+    {
+      "title": "Avalin Ninaivugal",
+      "description": "Behind the scenes of the short film.",
+      "image": "",
+      "video_url": "Videos/avalin-bts.mp4",
+      "tag": "BTS",
+      "featured": false
+    },
+    {
+      "title": "Finding the Story",
+      "description": "Casting video for Avalin Ninaivugal.",
+      "image": "",
+      "video_url": "Videos/avalin-casting.mp4",
+      "tag": "Casting",
+      "featured": false
+    },
+    {
+      "title": "Avalin Ninaivugal — Title",
+      "description": "Title video for an original short film.",
+      "image": "",
+      "video_url": "Videos/avalin-title.mp4",
+      "tag": "Title",
+      "featured": false
+    },
+    {
+      "title": "Catering Promotional Film",
+      "description": "Promotional film by OTE Visuals.",
+      "image": "",
+      "video_url": "Videos/catering-promo.mp4",
+      "tag": "Commercial",
+      "featured": false
+    },
+    {
+      "title": "A Cinematic Film for Akka",
+      "description": "A cinematic video crafted by OTE Visuals.",
+      "image": "",
+      "video_url": "Videos/akka-cinematic.mp4",
+      "tag": "Cinematic",
+      "featured": false
+    }
+  ]
+}
