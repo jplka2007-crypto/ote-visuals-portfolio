@@ -1,0 +1,19 @@
+backend:
+  name: github
+  repo: jplka2007-crypto/ote-visuals-portfolio
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "projects"
+    label: "OTE Visuals Projects"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Project Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Cover Image", name: "image", widget: "image", required: false }
+      - { label: "Video URL", name: "video_url", widget: "string", required: false }
