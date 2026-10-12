@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b0b0b">
+
+<title>OTE Visuals | Creative Production</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #0b0b0b;
+    --card: #141414;
+    --text: #f5f1e9;
+    --muted: #a6a199;
+    --gold: #c9a96e;
+    --gold-light: #e8d5ae;
+    --border: rgba(255,255,255,0.12);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "DM Sans", sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.gold-line {
+    height: 3px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--gold),
+        transparent
+    );
+}
+
+/* NAVIGATION */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(11,11,11,0.92);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-container {
+    max-width: 1250px;
+    margin: auto;
+    padding: 18px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-circle {
+    width: 43px;
+    height: 43px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.logo-name {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+.logo-sub {
+    display: block;
+    color: var(--muted);
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: color .3s;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.nav-contact {
+    border: 1px solid var(--gold);
+    padding: 11px 16px;
+}
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 85vh;
+    min-height: 85svh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            ellipse at 80% 40%,
+            rgba(201,169,110,0.13),
+            transparent 38%
+        ),
+        linear-gradient(120deg, #080808, #141310, #080808);
+    border-bottom: 1px solid var(--border);
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: .18;
+    background-image:
+        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 70px 70px;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 1250px;
+    margin: auto;
+    padding: 100px 5%;
+    position: relative;
+    z-index: 1;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 9vw, 115px);
+    line-height: .98;
+    letter-spacing: -6px;
+    font-weight: 600;
+    margin: 28px 0;
+}
+
+.hero h1 span {
+    color: var(--gold-light);
+    font-family: "Playfair Display", Georgia, serif;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: -4px;
+}
+
+.hero-description {
+    max-width: 500px;
+    color: #b8b4ad;
+    font-size: 15px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 35px;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 22px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: .3s;
+}
+
+.button-primary {
+    background: var(--gold-light);
+    color: #111;
+    border: 1px solid var(--gold-light);
+}
+
+.button-primary:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+.button-outline {
+    border: 1px solid rgba(255,255,255,.3);
+    color: white;
+}
+
+.button-outline:hover {
+    border-color: var(--gold);
+    color: var(--gold-light);
+    transform: translateY(-3px);
+}
+
+.hero-bottom {
+    position: absolute;
+    bottom: 25px;
+    right: 5%;
+    color: #777;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* COMMON SECTIONS */
+
+.section {
+    max-width: 1250px;
+    margin: auto;
+    padding: 100px 5%;
+}
+
+.section-label {
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.section-heading {
+    font-size: clamp(35px, 5vw, 58px);
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin-top: 12px;
+    font-weight: 600;
+}
+
+.section-heading span {
+    color: var(--gold);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.section-description {
+    max-width: 350px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* PROJECT GRID */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.project-card {
+    min-width: 0;
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,.08);
+    overflow: hidden;
+    transition: transform .35s, border-color .35s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(201,169,110,.6);
+}
+
+.project-card.featured {
+    grid-column: span 2;
+}
+
+.project-video {
+    background: #050505;
+    overflow: hidden;
+}
+
+.project-video video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: block;
+    object-fit: contain;
+    background: #050505;
+}
+
+.project-details {
+    padding: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 15px;
+}
+
+.project-number {
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 7px;
+}
+
+.project-details h3 {
+    font-size: 21px;
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+.project-details p {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 8px;
+}
+
+.project-tag {
+    border: 1px solid var(--border);
+    padding: 6px 9px;
+    color: #c3bdb2;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* ABOUT */
+
+.about-section {
+    background:
+        radial-gradient(
+            ellipse at 90% 50%,
+            rgba(201,169,110,.08),
+            transparent 40%
+        ),
+        #111;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.about-container {
+    max-width: 1250px;
+    margin: auto;
+    padding: 90px 5%;
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 70px;
+}
+
+.about-text {
+    color: #bcb7af;
+    font-size: 15px;
+    max-width: 600px;
+}
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.services span {
+    border: 1px solid rgba(201,169,110,.35);
+    color: var(--gold-light);
+    padding: 10px 13px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* CONTACT */
+
+.contact-section {
+    text-align: center;
+    padding-top: 110px;
+    padding-bottom: 110px;
+}
+
+.contact-section .section-heading {
+    max-width: 800px;
+    margin: 18px auto;
+}
+
+.contact-section .section-heading em {
+    font-family: "Playfair Display", Georgia, serif;
+    font-weight: 400;
+    color: var(--gold-light);
+}
+
+.contact-description {
+    max-width: 500px;
+    color: var(--muted);
+    font-size: 14px;
+    margin: 20px auto;
+}
+
+.contact-section .hero-buttons {
+    justify-content: center;
+}
+
+/* FOOTER */
+
+footer {
+    border-top: 1px solid var(--border);
+    padding: 28px 5%;
+    color: #817c74;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.footer-content {
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-brand {
+    color: var(--text);
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+/* SCROLL ANIMATION */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: .01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 700px) {
+    .nav-container {
+        padding: 14px 5%;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 9px;
+        letter-spacing: .5px;
+    }
+
+    .nav-links a:not(.nav-contact) {
+        display: none;
+    }
+
+    .logo-circle {
+        width: 36px;
+        height: 36px;
+    }
+
+    .logo-name {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .logo-sub {
+        font-size: 8px;
+        letter-spacing: 1.5px;
+    }
+
+    .hero {
+        min-height: 75svh;
+    }
+
+    .hero-content {
+        padding-top: 75px;
+        padding-bottom: 100px;
+    }
+
+    .hero h1 {
+        font-size: clamp(48px, 13vw, 80px);
+        letter-spacing: -3px;
+    }
+
+    .hero h1 span {
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-bottom {
+        left: 5%;
+        right: auto;
+        font-size: 8px;
+    }
+
+    .section {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .section-header {
+        display: block;
+    }
+
+    .section-description {
+        margin-top: 18px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 17px;
+    }
+
+    .project-card.featured {
+        grid-column: auto;
+    }
+
+    .project-details {
+        padding: 17px;
+    }
+
+    .project-details h3 {
+        font-size: 18px;
+    }
+
+    .project-tag {
+        display: none;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .contact-section {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+/* =========================================
+   OTE VISUALS — PREMIUM CREATIVE TEAM
+========================================= */
+
+.team-section {
+    width: 100%;
+    padding: 100px 5%;
+    background: #0b0b0b;
+    color: #f5f1e9;
+    border-top: 1px solid rgba(201, 169, 110, 0.25);
+    overflow: hidden;
+}
+
+.team-container {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+/* SECTION HEADING */
+
+.team-heading {
+    max-width: 720px;
+    margin-bottom: 50px;
+}
+
+.team-heading .section-label {
+    color: #c9a96e;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.team-title {
+    margin-top: 15px;
+    color: #f5f1e9;
+    font-size: clamp(38px, 6vw, 68px);
+    line-height: 1.1;
+    letter-spacing: -2px;
+    font-weight: 600;
+}
+
+.team-title span {
+    color: #c9a96e;
+    font-family: Georgia, serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.team-description {
+    max-width: 520px;
+    margin-top: 20px;
+    color: #a7a39b;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* TEAM GRID */
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 35px 24px;
+    width: 100%;
+}
+
+/* TEAM CARD */
+
+.team-card {
+    min-width: 0;
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        background 0.35s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(201, 169, 110, 0.65);
+    background: #15130f;
+}
+
+/* MEMBER PHOTO */
+
+.team-photo {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at top, #29251d, #111 70%);
+}
+
+.team-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(20%) brightness(0.9);
+    transition:
+        transform 0.6s ease,
+        filter 0.6s ease;
+}
+
+.team-card:hover .team-photo img {
+    transform: scale(1.05);
+    filter: grayscale(0%) brightness(1);
+}
+
+/* MEMBER NUMBER */
+
+.team-number {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 34px;
+    height: 30px;
+    padding: 0 8px;
+    background: rgba(10, 10, 10, 0.8);
+    border: 1px solid rgba(201, 169, 110, 0.65);
+    color: #e8d5ae;
+    font-size: 10px;
+    letter-spacing: 1px;
+    backdrop-filter: blur(8px);
+}
+
+/* MEMBER DETAILS */
+
+.team-info {
+    padding: 22px 19px 24px;
+    border-top: 1px solid rgba(201, 169, 110, 0.2);
+}
+
+.team-info h3 {
+    color: #f5f1e9;
+    font-size: clamp(14px, 1.4vw, 18px);
+    line-height: 1.5;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    overflow-wrap: anywhere;
+}
+
+.team-info > p {
+    margin-top: 8px;
+    color: #c9a96e;
+    font-size: 12px;
+    line-height: 1.6;
+    font-weight: 600;
+}
+
+.team-roles {
+    margin-top: 10px;
+    color: #99958d;
+    font-size: 11px;
+    line-height: 1.9;
+}
+
+/* GOLD DETAIL */
+
+.team-info::before {
+    content: "";
+    display: block;
+    width: 35px;
+    height: 2px;
+    margin-bottom: 15px;
+    background: #c9a96e;
+    transition: width 0.35s ease;
+}
+
+.team-card:hover .team-info::before {
+    width: 65px;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+    .team-section {
+        padding: 80px 5%;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px 18px;
+    }
+
+    .team-info {
+        padding: 18px 15px 20px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+    .team-section {
+        padding: 65px 4%;
+    }
+
+    .team-heading {
+        margin-bottom: 32px;
+    }
+
+    .team-title {
+        font-size: 38px;
+        letter-spacing: -1.5px;
+    }
+
+    .team-description {
+        font-size: 13px;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 12px;
+    }
+
+    .team-info {
+        padding: 14px 11px 17px;
+    }
+
+    .team-info h3 {
+        font-size: 12px;
+    }
+
+    .team-info > p {
+        font-size: 11px;
+    }
+
+    .team-roles {
+        font-size: 10px;
+        line-height: 1.7;
+    }
+
+    .team-number {
+        top: 8px;
+        left: 8px;
+        min-width: 29px;
+        height: 26px;
+        font-size: 9px;
+    }
+}
+
+/* REDUCE MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+    .team-card,
+    .team-photo img,
+    .team-info::before {
+        transition: none;
+    }
+
+    .team-card:hover {
+        transform: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="gold-line"></div>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="nav-container">
+
+        <a href="#home" class="logo">
+            <div class="logo-circle">OTE</div>
+
+            <div>
+                <div class="logo-name">OTE VISUALS</div>
+                <span class="logo-sub">FILM · EDIT · CREATE</span>
+            </div>
+        </a>
+
+        <div class="nav-links">
+            <a href="#work">Our Work</a>
+            <a href="#about">About</a>
+            <a href="#contact" class="nav-contact">Let's Talk ↗</a>
+        </div>
+
+    </div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            Independent Creative Production
+        </div>
+
+        <h1>
+            Visual stories.<br>
+            <span>Felt, not just seen.</span>
+        </h1>
+
+        <p class="hero-description">
+            We turn moments into moving images through cinematic
+            filmmaking, thoughtful editing, and expressive colour.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#work" class="button button-primary">
+                Explore our work ↘
+            </a>
+
+            <a href="#contact" class="button button-outline">
+                Start a project ↗
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-bottom">
+        Stories told one frame at a time
+    </div>
+
+</section>
+
+<!-- PROJECTS -->
+<section class="section" id="work">
+
+    <div class="section-header reveal">
+
+        <div>
+            <div class="section-label">01 / The Portfolio</div>
+            <h2 class="section-heading">
+                Selected work<span>.</span>
+            </h2>
+        </div>
+
+        <p class="section-description">
+            A collection of stories, visual experiments, and creative
+            projects made with passion and purpose.
+        </p>
+
+    </div>
+
+    <div class="project-grid">
+
+        <!-- PROJECT 01 -->
+        <article class="project-card featured reveal">
+
+            <div class="project-video">
+                <video controls preload="metadata" playsinline>
+                    <source src="Videos/singapenne.mp4" type="video/mp4">
+                    Your browser does not support video playback.
+                </video>
+            </div>
+
+            <div class="project-details">
+                <div>
+                    <span class="project-number">PROJECT 01 / SHORT FILM</span>
+                    <h3>Singapenne</h3>
+                    <p>A contest short film by OTE Visuals.</p>
+                </div>
+
+                <span class="project-tag">Film</span>
+            </div>
+
+        </article>
+
+        <!-- PROJECT 02 -->
+        <article class="project-card reveal">
+
+            <div class="project-video">
+                <video controls preload="metadata" playsinline>
+                    <source src="Videos/singapenne-bts.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="project-details">
+                <div>
+                    <span class="project-number">PROJECT 02 / BTS & PROMO</span>
+                    <h3>Behind Singapenne</h3>
+                    <p>Behind-the-scenes moments and promotional content.</p>
+                </div>
+
+                <span class="project-tag">BTS</span>
+            </div>
+
+        </article>
+
+        <!-- PROJECT 03 -->
+        <article class="project-card reveal">
+
+            <div class="project-video">
+                <video controls preload="metadata" playsinline>
+                    <source src="Videos/avalin-bts.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="project-details">
+                <div>
+                    <span class="project-number">PROJECT 03 / PRODUCTION</span>
+                    <h3>Avalin Ninaivugal</h3>
+                    <p>Behind the scenes of the casting process.</p>
+                </div>
+
+                <span class="project-tag">BTS</span>
+            </div>
+
+        </article>
+
+        <!-- PROJECT 04 -->
+        <article class="project-card reveal">
+
+            <div class="project-video">
+                <video controls preload="metadata" playsinline>
+                    <source src="Videos/avalin-casting.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="project-details">
+                <div>
+                    <span class="project-number">PROJECT 04 / CASTING</span>
+                    <h3>Finding the Story</h3>
+                    <p>Casting call video for Avalin Ninaivugal.</p>
+                </div>
+
+                <span class="project-tag">Casting</span>
+            </div>
+
+        </article>
+
+        <!-- PROJECT 05 -->
+        <article class="project-card reveal">
+
+            <div class="project-video">
+                <video controls preload="metadata" playsinline>
+                    <source src="Videos/avalin-title.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="project-details">
+                <div>
+                    <span class="project-number">PROJECT 05 / TITLE REVEAL</span>
+                    <h3>Avalin Ninaivugal — Title</h3>
+                    <p>A title video for an original short film project.</p>
+                </div>
+
+                <span class="project-tag">Title</span>
+            </div>
+
+        </article>
+
+        <!-- PROJECT 06 -->
+        <article class="project-card reveal">
+
+            <div class="project-video">
+                <video controls preload="metadata" playsinline>
+                    <source src="Videos/catering-promo.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="project-details">
+                <div>
+                    <span class="project-number">PROJECT 06 / COMMERCIAL</span>
+                    <h3>Catering Promotional Film</h3>
+                    <p>Promotional visuals crafted to showcase the offering.</p>
+                </div>
+
+                <span class="project-tag">Commercial</span>
+            </div>
+
+        </article>
+
+        <!-- PROJECT 07 -->
+        <article class="project-card reveal">
+
+            <div class="project-video">
+                <video controls preload="metadata" playsinline>
+                    <source src="Videos/akka-cinematic.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="project-details">
+                <div>
+                    <span class="project-number">PROJECT 07 / CINEMATIC</span>
+                    <h3>A Cinematic Film for Akka</h3>
+                    <p>A personal cinematic video built around mood and movement.</p>
+                </div>
+
+                <span class="project-tag">Cinematic</span>
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+<!-- OTE VISUALS — OUR TEAM -->
+<section class="team-section" id="team">
+
+    <div class="team-container">
+
+        <div class="team-heading">
+            <p class="section-label">THE PEOPLE BEHIND THE FRAME</p>
+
+            <h2 class="team-title">
+                Meet Our <span>Creative Team.</span>
+            </h2>
+
+            <p class="team-description">
+                Nine creative minds. One vision.
+                A passionate team bringing stories to life through
+                filmmaking, music, performance and visual storytelling.
+            </p>
+        </div>
+
+        <div class="team-grid">
+
+            <!-- MEMBER 01 -->
+            <article class="team-card">
+                <div class="team-photo">
+                    <img src="assets/team-1.jpg"
+                         alt="Jivapriyan S S"
+                         loading="lazy">
+                    <span class="team-number">01</span>
+                </div>
+                <div class="team-info">
+                    <h3>JIVAPRIYAN S S</h3>
+                    <p>Founder & CEO</p>
+                    <div class="team-roles">
+                        Director · Cinematographer · Editor · Scriptwriter
+                    </div>
+                </div>
+            </article>
+
+            <!-- MEMBER 02 -->
+            <article class="team-card">
+                <div class="team-photo">
+                    <img src="assets/team-2.jpg"
+                         alt="Vikason"
+                         loading="lazy">
+                    <span class="team-number">02</span>
+                </div>
+                <div class="team-info">
+                    <h3>VIKASON</h3>
+                    <p>Assistant Director</p>
+                    <div class="team-roles">
+                        Cinematographer · Editor · Scriptwriter
+                    </div>
+                </div>
+            </article>
+
+            <!-- MEMBER 03 -->
+            <article class="team-card">
+                <div class="team-photo">
+                    <img src="assets/team-3.jpg"
+                         alt="Rohith Sharma"
+                         loading="lazy">
+                    <span class="team-number">03</span>
+                </div>
+                <div class="team-info">
+                    <h3>ROHITH SHARMA</h3>
+                    <p>Music & Composition</p>
+                    <div class="team-roles">
+                        Musician · Composer · Lyricist
+                    </div>
+                </div>
+            </article>
+
+            <!-- MEMBER 04 -->
+            <article class="team-card">
+                <div class="team-photo">
+                    <img src="assets/team-4.jpg"
+                         alt="Kishore N"
+                         loading="lazy">
+                    <span class="team-number">04</span>
+                </div>
+                <div class="team-info">
+                    <h3>KISHORE N</h3>
+                    <p>Cinematographer</p>
+                    <div class="team-roles">
+                        Videographer
+                    </div>
+                </div>
+            </article>
+
+            <!-- MEMBER 05 -->
+            <article class="team-card">
+                <div class="team-photo">
+                    <img src="assets/team-5.jpg"
+                         alt="Nandha Kumar"
+                         loading="lazy">
+                    <span class="team-number">05</span>
+                </div>
+                <div class="team-info">
+                    <h3>NANDHA KUMAR</h3>
+                    <p>Cinematographer</p>
+                    <div class="team-roles">
+                        Videographer
+                    </div>
+                </div>
+            </article>
+
+            <!-- MEMBER 06 -->
+            <article class="team-card">
+                <div class="team-photo">
+                    <img src="assets/team-6.jpg"
+                         alt="Santhosh"
+                         loading="lazy">
+                    <span class="team-number">06</span>
+                </div>
+                <div class="team-info">
+                    <h3>SANTHOSH</h3>
+                    <p>Dance Choreographer</p>
+                    <div class="team-roles">
+                        Actor · Lyricist
+                    </div>
+                </div>
+            </article>
+
+            <!-- MEMBER 07 -->
+            <article class="team-card">
+                <div class="team-photo">
+                    <img src="assets/team-7.jpg"
+                         alt="Divyesh Chellaiah"
+                         loading="lazy">
+                    <span class="team-number">07</span>
+                </div>
+                <div class="team-info">
+                    <h3>DIVYESH CHELLAIAH</h3>
+                    <p>Actor</p>
+                    <div class="team-roles">
+                        Performance & Screen Presence
+                    </div>
+                </div>
+            </article>
+
+            <!-- MEMBER 08 -->
+            <article class="team-card">
+                <div class="team-photo">
+                    <img src="assets/team-8.jpg"
+                         alt="Ashwin Kumar"
+                         loading="lazy">
+                    <span class="team-number">08</span>
+                </div>
+                <div class="team-info">
+                    <h3>ASHWIN KUMAR</h3>
+                    <p>Producer</p>
+                    <div class="team-roles">
+                        Actor · Property Manager
+                    </div>
+                </div>
+            </article>
+
+            <!-- MEMBER 09 -->
+            <article class="team-card">
+                <div class="team-photo">
+                    <img src="assets/team-9.jpg"
+                         alt="Varun"
+                         loading="lazy">
+                    <span class="team-number">09</span>
+                </div>
+                <div class="team-info">
+                    <h3>VARUN</h3>
+                    <p>Task Manager</p>
+                    <div class="team-roles">
+                        Poster Designer · Photo Editor
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+
+    <div class="about-container">
+
+        <div class="reveal">
+
+            <div class="section-label">02 / Who We Are</div>
+
+            <h2 class="section-heading">
+                Made with intent.<br>
+                <span>Built on feeling.</span>
+            </h2>
+
+        </div>
+
+        <div class="reveal">
+
+            <p class="about-text">
+                OTE Visuals is a creative team focused on visual storytelling.
+                From the first frame to the final grade, we aim to create
+                work that feels considered, cinematic, and memorable.
+            </p>
+
+            <div class="services">
+                <span>Filmmaking</span>
+                <span>Video Editing</span>
+                <span>Colour Grading</span>
+                <span>Photography</span>
+                <span>Promotional Videos</span>
+                <span>Visual Storytelling</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+<section class="section contact-section" id="contact">
+
+    <div class="reveal">
+
+        <div class="section-label">
+            03 / Let's Create Something
+        </div>
+
+        <h2 class="section-heading">
+            Have a story in mind?<br>
+            <em>Let's bring it to life.</em>
+        </h2>
+
+        <p class="contact-description">
+            For film projects, promotional videos, editing, and creative
+            collaborations, get in touch with OTE Visuals.
+        </p>
+
+ <div class="hero-buttons">
+
+    <!-- Instagram -->
+    <a
+        href="https://www.instagram.com/_oru.typz.edit_/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="button button-primary">
+        Instagram ↗
+    </a>
+
+    <!-- WhatsApp -->
+    <a
+        href="https://wa.me/919943799304?text=Hi%20OTE%20Visuals!%20I'm%20interested%20in%20your%20services.%20Could%20you%20share%20your%20packages%3F"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="button button-outline">
+        WhatsApp ↗
+    </a>
+
+</div>
+
+    </div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="footer-content">
+
+        <span class="footer-brand">OTE VISUALS</span>
+
+        <span>FILM · EDIT · CREATE</span>
+
+        <span>© 2026 OTE Visuals. All rights reserved.</span>
+
+    </div>
+
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+        }
+
+    });
+
+}, {
+    threshold: 0.12
+});
+
+document.querySelectorAll(".reveal").forEach((element) => {
+    observer.observe(element);
+});
+</script>
+
+</body>
+</html>
