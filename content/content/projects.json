@@ -33,13 +33,13 @@
       "featured": false
     },
     {
-      "title": "Avalin Ninaivugal — Title",
-      "description": "Title video for an original short film.",
-      "image": "",
-      "video_url": "Videos/avalin-title.mp4",
-      "tag": "Title",
-      "featured": false
-    },
+  "title": "Avalin Ninaivugal — Title",
+  "description": "A title video for an original short film project.",
+  "image": "",
+  "video_url": "Videos/avalin-title.mp4",
+  "tag": "Title",
+  "featured": false
+},
     {
       "title": "Catering Promotional Film",
       "description": "Promotional film by OTE Visuals.",
