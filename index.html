@@ -1297,7 +1297,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 video.playsInline = true;
 
                 const source = document.createElement("source");
-                source.src = project.video_url;
+                source.src = new URL(project.video_url, document.baseURI).href;
                 source.type = "video/mp4";
 
                 video.appendChild(source);
