@@ -15,4 +15,4 @@ collections:
       - { label: "Project Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Cover Image", name: "image", widget: "image", required: false }
-      - { label: "Video URL", name: "video_url", widget: "string", required: false }
+      - { label: "Video URL", name: "video_url", widget: "string", required: false, hint: "Paste the Cloudinary video URL here." }
