@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: jplka2007-crypto/ote-visuals-portfolio
+  name: git-gateway
   branch: main
 
 media_folder: "assets/uploads"
