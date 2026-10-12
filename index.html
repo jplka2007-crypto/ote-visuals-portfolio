@@ -1270,5 +1270,90 @@ document.querySelectorAll(".reveal").forEach((element) => {
 });
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", async () => {
+    const grid = document.getElementById("project-grid");
+    if (!grid) return;
+
+    try {
+        const response = await fetch("/content/projects.json");
+        if (!response.ok) throw new Error("Projects could not be loaded");
+
+        const data = await response.json();
+        grid.replaceChildren();
+
+        data.projects.forEach((project, index) => {
+            if (!project.video_url && !project.image) return;
+
+            const card = document.createElement("article");
+            card.className = "project-card reveal";
+
+            if (project.featured) card.classList.add("featured");
+
+            const number = String(index + 1).padStart(2, "0");
+            const media = document.createElement("div");
+            media.className = "project-video";
+
+            if (project.video_url) {
+                const video = document.createElement("video");
+                video.controls = true;
+                video.preload = "metadata";
+                video.playsInline = true;
+
+                const source = document.createElement("source");
+                source.src = project.video_url;
+                source.type = "video/mp4";
+
+                video.appendChild(source);
+                video.append("Your browser does not support video playback.");
+                media.appendChild(video);
+            } else if (project.image) {
+                const img = document.createElement("img");
+                img.src = project.image;
+                img.alt = project.title || "OTE Visuals project";
+                img.loading = "lazy";
+                img.style.width = "100%";
+                media.appendChild(img);
+            }
+
+            const details = document.createElement("div");
+            details.className = "project-details";
+
+            const text = document.createElement("div");
+
+            const label = document.createElement("span");
+            label.className = "project-number";
+            label.textContent = `PROJECT ${number}`;
+
+            const title = document.createElement("h3");
+            title.textContent = project.title || "Untitled Project";
+
+            const description = document.createElement("p");
+            description.textContent = project.description || "";
+
+            text.append(label, title, description);
+            details.appendChild(text);
+
+            if (project.tag) {
+                const tag = document.createElement("span");
+                tag.className = "project-tag";
+                tag.textContent = project.tag;
+                details.appendChild(tag);
+            }
+
+            card.append(media, details);
+            grid.appendChild(card);
+        });
+
+        if (!grid.children.length) {
+            grid.textContent = "Projects coming soon.";
+        }
+    } catch (error) {
+        console.error("Project loading error:", error);
+        grid.textContent = "Projects are temporarily unavailable.";
+    }
+});
+</script>
+    
 </body>
 </html>
